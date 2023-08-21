@@ -11,11 +11,16 @@ object bolichito {
 	method objetoEnVidriera(unObjeto) {
 		objetoEnVidriera = unObjeto
 	}
-	method objetoEnMostrador() = objetoEnVidriera
+	method objetoEnMostrador() = objetoEnMostrador
 	method objetoEnMostrador(unObjeto) {
 		objetoEnMostrador = unObjeto
 	}
 	
 	method esBrillante() = objetoEnVidriera.material().esBrillante() && objetoEnMostrador.material().esBrillante()
+	method esMonocromatico() = objetoEnMostrador.color() == objetoEnVidriera.color()
+	method estaDesequilibrado() = objetoEnMostrador.peso() > objetoEnVidriera.peso()
+	method tieneAlgoDeColor(color) = objetoEnMostrador.color() == color || objetoEnVidriera.color() == color
+	method puedeMejorar() = self.estaDesequilibrado() || self.esMonocromatico()
+	method puedeOfrecerleAlgoA(persona) = persona.leGusta(objetoEnMostrador) || persona.leGusta(objetoEnVidriera)
 }
 

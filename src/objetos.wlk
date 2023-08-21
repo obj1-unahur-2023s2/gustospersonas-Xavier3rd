@@ -45,3 +45,38 @@ object placa {
 		peso = unPeso
 	}
 }
+
+// Más cosas
+
+object arito {
+	method color() = celeste
+	method material() = cobre
+	method peso() = 180
+}
+
+object banquito {
+	var color = naranja
+	method color() = color
+	method color(unColor){
+		color = unColor
+	}
+	method material() = madera
+	method peso() = 1700
+}
+
+object cajita {
+	var objetoAdentro
+	
+	method objetoAdentro() = objetoAdentro
+	method objetoAdentro(unObjeto){
+		objetoAdentro = unObjeto
+	}
+	method color() = rojo
+	method material() = cobre
+	method peso() {
+		if (self.objetoAdentro() == null)
+			return 400
+		else	
+			return 400 + self.objetoAdentro().peso()
+	}
+}
